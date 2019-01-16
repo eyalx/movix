@@ -7,16 +7,23 @@
     "start": "node server.js",
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "author": "Eyal Elimelech",
   "license": "ISC",
+  "homepage": "https://eyalx.github.io/movix/",
   "dependencies": {
     "axios": "^0.18.0",
     "concurrently": "^4.1.0",
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "file-loader": "^3.0.1",
+    "gh-pages": "^2.0.1",
+    "url-loader": "^1.1.2"
   },
   "devDependencies": {
+    "dotenv": "^6.2.0",
     "nodemon": "^1.18.9"
   }
 }

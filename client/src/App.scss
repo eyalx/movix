@@ -14,6 +14,18 @@ body {
 .lock-scroll {
     overflow: hidden !important;
 }
+h2 { font-size: 32px;font-weight: normal; }
+
+.fa-search{
+    font-size: 20px;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        cursor: pointer;
+        color: #f44242;
+        transform: translateY(0px);
+    }
+}
 
 #modal-root {
     position: relative;
@@ -29,13 +41,17 @@ body {
         
         .close-modal {
             position: absolute;
-            right:20px;
-            top:20px;
+            right:40px;
+            top:40px;
             z-index: 1;
+            background: none;
+            border: none;
+            color:#fff;
 
             .fa-times{
-                font-size: 20px;
+                font-size: 24px;
                 transition: all 0.3s ease-in-out;
+
                 &:hover {
                     cursor: pointer;
                     color: #f44242;
@@ -56,7 +72,15 @@ body {
         position: relative;
         margin-top: 20px;
         padding: 40px;
-    
+        
+        .search-label {
+            color:#666;
+            position: absolute;
+            top:60px;
+            .fa-search {
+                font-size: 32px;
+            }
+        }
         .search-input {
             font-size: 36px;
             background-color: transparent;
@@ -74,16 +98,16 @@ body {
     }
     
     .search-promo{
-        padding: 5px;
+        padding: 40px;
         position: relative;
         width: 100%;
         display: flex;
-    
+
         .movies {
             display: flex;
             flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
+            align-items: left;
+            justify-content: left;
         }
     
         .strip {
@@ -95,9 +119,6 @@ body {
         }
     }
 }
-      
-
-h2 { font-size: 32px;font-weight: normal; }
 
 #app-root{
     height:100%;
@@ -132,18 +153,9 @@ h2 { font-size: 32px;font-weight: normal; }
                 position: absolute;
                 right:20px;
                 top:20px;
-
-                .fa-search{
-                    
-                    font-size: 20px;
-                    transition: all 0.3s ease-in-out;
-    
-                    &:hover {
-                        cursor: pointer;
-                        color: #f44242;
-                        transform: translateY(0px);
-                    }
-                }
+                background: none;
+                border: none;
+                color:#fff;
             }
         }
 
@@ -157,7 +169,7 @@ h2 { font-size: 32px;font-weight: normal; }
                 height: 640px;
                 background: 
                 linear-gradient(rgba(0, 0, 0, .3), rgba(255, 0, 0, .2)),
-                url('https://images.moviesanywhere.com/1bb2e060f54cd624dc98f700ebfc5c45/27f03c11-c2c8-4039-86d2-4c451924783f.jpg?r=3x1&w=2400');
+                url('./br-bg.jpg');
                 background-size: contain, cover;
                 background-position: center;
                 background-repeat: no-repeat;
@@ -193,14 +205,24 @@ h2 { font-size: 32px;font-weight: normal; }
         }
 
         @include lg {
-            width: 20%;
+            width: 22%;
             margin: 0 !important;
         }
 
         @include rwd(1200) {
-            width: 16%;
+            width: 17.8%;
+            margin-bottom: 8px !important;
         }
-    
+
+        @include rwd(1600) {
+            width: 14.2%;
+            margin-bottom: 20px !important;
+        }
+
+        @include rwd(1900) {
+            width: 11.1%;
+            margin-bottom: 2px !important;
+        }
 
         &:hover {
             cursor: pointer;

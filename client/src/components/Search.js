@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { throttle, debounce } from 'throttle-debounce';
 import Movies from './Movies';
 
-export class Search extends Component {
+export default class Search extends Component {
 
 	constructor(props){
 		super(props);
@@ -57,19 +57,23 @@ export class Search extends Component {
 						this.state.trandingMovies
 
 		return (
-			<div id="search">
-				<div className="search-form">
+			<div id='search'>
+				<div className='search-form'>
+					<label for='search' className='search-label'>
+						<i className='fas fa-search'></i>
+					</label>
 					<input 
-						className="search-input" 
-						id="search" name="search" 
-						placeholder="Search for movies &amp; more" 
-						type="search"
+						className='search-input' 
+						id='search' 
+						name='search' 
+						placeholder='Search for movies &amp; more'
+						type='search'
 						value={ this.state.query }
 						onChange={ this.searchChangeHandler } />
 				</div>
-				<div className="search-promo">
-					<div className="strip">
-						<h2>Trending</h2>
+				<div className=' search-promo'>
+					<div className='strip'>
+						<h2>{ searchResults.length > 0 ? `Search results for: ${ this.state.query }` : 'Trending' }</h2>
 						<Movies movies={ movies } />
 					</div>
 				</div>
@@ -77,5 +81,3 @@ export class Search extends Component {
 		);
 	}
 }
-
-export default Search

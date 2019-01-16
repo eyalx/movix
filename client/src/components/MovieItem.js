@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
 
-export class MovieItem extends Component {
+export default class MovieItem extends Component {
 
   constructor(props){
     super(props);
   }
-
   
   render() {
     const movie = this.props.movie;
@@ -17,5 +16,3 @@ export class MovieItem extends Component {
     )
   }
 }
-
-export default MovieItem

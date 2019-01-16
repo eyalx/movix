@@ -1,13 +1,13 @@
 import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom'
 
-const ModalTrigger = ({ onOpen, el }) => <button className="modal-trigger" onClick={ onOpen }>{ el }</button>;
+const ModalTrigger = ({ onOpen, el }) => <button className='modal-trigger' onClick={ onOpen }>{ el }</button>;
   
 const ModalContent = ({ content, onClose, onKeyDown}) =>
   ReactDOM.createPortal(
     <div className='modal' onKeyDown={ onKeyDown }>
       <button className='close-modal' onClick={ onClose } >
-        <i className='far fa-times'></i>
+        <i className='fas fa-times'></i>
       </button>
       { content }
     </div>,

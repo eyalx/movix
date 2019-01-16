@@ -3,7 +3,7 @@ import MovieItem from './MovieItem';
 import Slider from "react-slick";
 
 
-export class Movies extends Component {
+export default class Movies extends Component {
   
   constructor(props){
     super(props);
@@ -19,28 +19,18 @@ export class Movies extends Component {
 
   render() {
     const settings = {
-      dots: true,
+      dots: false,
       infinite: true,
       speed: 500,
-      slidesToShow: 5,
-      slidesToScroll: 1,
+      slidesToShow: 9,
+      slidesToScroll: 3,
       responsive: [
-        {
-          breakpoint: 1280,
-          settings: {
-            slidesToShow: 6,
-            slidesToScroll: 3,
-            infinite: true,
-            dots: true
-          }
-        },
         {
           breakpoint: 1024,
           settings: {
-            slidesToShow: 4,
-            slidesToScroll: 3,
+            slidesToShow: 5,
+            slidesToScroll: 1,
             infinite: true,
-            dots: true
           }
         },
         {
@@ -63,7 +53,7 @@ export class Movies extends Component {
 
     if(this.state.slider){
       return (
-        <div className="movies">
+        <div className='movies'>
           <Slider {...settings} >
             {this.props.movies.map((movie) => {
               return <MovieItem key={ movie.id } movie={ movie } />
@@ -73,7 +63,7 @@ export class Movies extends Component {
       );
     }else{
       return (
-      <div className="movies">
+      <div className='movies'>
           {this.props.movies.map((movie) => {
             return <MovieItem key={ movie.id } movie={movie} />
           })}
@@ -83,5 +73,3 @@ export class Movies extends Component {
     
   }
 }
-
-export default Movies;

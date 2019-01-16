@@ -5,64 +5,46 @@ var app = express();
 
 const port = 5000;
 const apiKey = '84f9baf0803d594c22ce4587b13e1a1f';
+const apiUrl ='https://api.themoviedb.org/3/';
 
 app.listen(port, () => console.log(`Server is running on port ${port}`));
 
 app.get('/api/movies/trending', (req, res) => {
 
-  axios.get('https://api.themoviedb.org/3/trending/all/day', { 
-      params: {
-        api_key: apiKey
-      }
-    }).then((response) => {
-      
-      let trendingMovies = [];
-      response.data.results.map((movies) => {
-        trendingMovies.push(movies)
-      });
-      res.json(trendingMovies);
-
-  }).catch((error) =>{
-    console.log(error);
-  });
+  fetchApiCall('trending/all/day', {},
+    (results) => res.json(results));
 
 });
 
 app.get('/api/movies/now-playing', (req, res) => {
 
-  axios.get('https://api.themoviedb.org/3/movie/now_playing', {
-      params: {
-        api_key: apiKey
-      }}).then((response) => {
-      
-      let nowPlaying = [];
-      response.data.results.map((movies) => {
-        nowPlaying.push(movies)
-      });
-      res.json(nowPlaying);
-
-  }).catch((error) => {
-    console.log(error);
-  });
-
+  fetchApiCall('movie/now_playing', {},
+    (results) => res.json(results));
+  
 });
 
 app.get('/api/movies/search/:query', (req, res) => {
+  
   const searchTerm = req.params.query;
+  
+  fetchApiCall('search/movie/', 
+    { query: searchTerm },
+    (results) => res.json(results));
 
-  axios.get('https://api.themoviedb.org/3/search/movie/', { 
-      params: {
-        api_key: apiKey,
-        query: searchTerm
-    }}).then((response) => {
+});
 
-      let searchResults = [];
+function fetchApiCall(route, params, callBack){
+  axios.get(`${apiUrl}${route}`, { 
+      params: { api_key: apiKey, ...params }
+    }).then((response) => {
+    
+      let results = [];
       response.data.results.map((movies) => {
-        searchResults.push(movies)
+        results.push(movies)
       });
-      res.json(searchResults);
+      callBack(results);
 
   }).catch((error) => { 
     console.log(error);
   });
-});
+}
