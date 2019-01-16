@@ -1,0 +1,217 @@
+@import '_mixins.scss';
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.4;
+}
+
+.lock-scroll {
+    overflow: hidden !important;
+}
+
+#modal-root {
+    position: relative;
+    z-index: 999;
+    
+    .modal {
+        background-color: rgba(0,0,0,0.9);
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        
+        .close-modal {
+            position: absolute;
+            right:20px;
+            top:20px;
+            z-index: 1;
+
+            .fa-times{
+                font-size: 20px;
+                transition: all 0.3s ease-in-out;
+                &:hover {
+                    cursor: pointer;
+                    color: #f44242;
+                    transform: translateY(0px);
+                }
+            }
+        }
+    }
+
+  }
+
+#search {
+    width: 100%;
+    overflow-x: auto;
+    height: 100%;
+
+    .search-form {
+        position: relative;
+        margin-top: 20px;
+        padding: 40px;
+    
+        .search-input {
+            font-size: 36px;
+            background-color: transparent;
+            border: 0;
+            border-bottom: 2px solid #666;
+            box-sizing: border-box;
+            color: #fff;
+            display: inline-block;
+            font-family: Open Sans Semi-Bold,sans-serif;
+            outline: none;
+            padding: 8px 40px;
+            vertical-align: middle;
+            width: 100%;
+        }
+    }
+    
+    .search-promo{
+        padding: 5px;
+        position: relative;
+        width: 100%;
+        display: flex;
+    
+        .movies {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+    
+        .strip {
+            
+            .item {
+                flex-wrap: wrap;
+                margin: 5px 0 0 5px;   
+            }
+        }
+    }
+}
+      
+
+h2 { font-size: 32px;font-weight: normal; }
+
+#app-root{
+    height:100%;
+
+    #container {
+        display: flex;  
+        flex-direction: column;
+        min-height:100%;
+
+        .header {
+            height: 60px;
+            width: 100%;
+            position: absolute;
+            box-sizing: inherit;
+            color: #fff;
+            background: linear-gradient(rgba(0, 0, 0, .3), rgba(255, 0, 0, 0.1));
+            transition: background-color .25s ease, height .35s ease;
+
+            &.fixed{
+                position: fixed;
+                background-color: #06000a;
+            }
+
+            .logo{
+                position: absolute;
+                top:10px;
+                left: 30px;
+                font-size: 28px;
+            }
+
+            .modal-trigger {
+                position: absolute;
+                right:20px;
+                top:20px;
+
+                .fa-search{
+                    
+                    font-size: 20px;
+                    transition: all 0.3s ease-in-out;
+    
+                    &:hover {
+                        cursor: pointer;
+                        color: #f44242;
+                        transform: translateY(0px);
+                    }
+                }
+            }
+        }
+
+        .main {
+            display: flex;  
+            flex-direction: column;
+            flex-grow:1;
+            background-color:#06000a;
+            
+            .promo{
+                height: 640px;
+                background: 
+                linear-gradient(rgba(0, 0, 0, .3), rgba(255, 0, 0, .2)),
+                url('https://images.moviesanywhere.com/1bb2e060f54cd624dc98f700ebfc5c45/27f03c11-c2c8-4039-86d2-4c451924783f.jpg?r=3x1&w=2400');
+                background-size: contain, cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+        }
+        
+        .footer {
+            background: rgba(0, 0, 0, .9);
+            height: 200px;;
+        }
+
+    }
+}
+.content {
+    padding: 40px;
+}
+
+.strip {
+    margin-bottom: 50px;
+
+    h2 {
+        margin: 10px 0 20px 0;
+        color: #fff;
+    }
+    
+    .item {
+        position: relative;
+        transition: all 0.3s ease-in-out;
+        width: 16%;
+
+        @include sm {
+            width: 33.3333%;
+        }
+
+        @include lg {
+            width: 20%;
+            margin: 0 !important;
+        }
+
+        @include rwd(1200) {
+            width: 16%;
+        }
+    
+
+        &:hover {
+            cursor: pointer;
+            transform: translateY(0px);
+        }
+
+        .poster {
+            width:200px;
+            height:300px;
+        }
+    }  
+}
+
+
