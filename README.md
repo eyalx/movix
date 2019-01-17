@@ -1,45 +1,24 @@
-# Movix
+# Movix - TMDb Movie Search
 
-A movies website with TMDB
+A react js movies search app using TMDb API
 * https://www.themoviedb.org/
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+TMDb Movie Search is a responsive React app that utilises Express server, 
+loading data via The Movie Database (TMDb) API.
 
-### Prerequisites
-
-```
-npm start
-```
+### Tools
+Key tools used in this React project are:
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
+node.js is required to get npm.
 
-Say what the step will be
+If you would like to download the code and try it for yourself:
 
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [React.JS](https://reactjs.org/docs/getting-started.html) - The web framework used
-* [Express.JS](https://expressjs.com/) - Node.js web application framework
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+1. Clone the repo: https://github.com/eyalx/movix.git
+2. cd movix
+3. Install packages: npm install
+4. Build project and launch: npm start
+5. Open your browser at: http://localhost:3000 (it should open it automaticly)
