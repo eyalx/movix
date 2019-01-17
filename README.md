@@ -1,7 +1,7 @@
 # Movix
 
 A movies website with TMDB
-*https://www.themoviedb.org/
+* https://www.themoviedb.org/
 
 ## Getting Started
 

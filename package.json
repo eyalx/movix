@@ -4,7 +4,7 @@
   "description": "Movix",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "concurrently \"npm run server\" \"npm run client\"",
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
@@ -13,7 +13,7 @@
   },
   "author": "Eyal Elimelech",
   "license": "ISC",
-  "homepage": "https://eyalx.github.io/movix/",
+  "homepage": "https://github.com/eyalx/movix",
   "dependencies": {
     "axios": "^0.18.0",
     "concurrently": "^4.1.0",
