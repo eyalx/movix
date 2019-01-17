@@ -13,11 +13,11 @@ Key tools used in this React project are:
 
 | Tool          | Description   |
 | :-------------: |-------------|
-| React      | A JavaScript library for building user interfaces |
-| Express      | Node.js web application framework      |
-| Webpack | webpack is a static module bundler for modern JavaScript applications      |
-| Babel | Use next generation JavaScript, today |
-
+| [React](https://reactjs.org/)     | A JavaScript library for building user interfaces |
+| [Express](https://expressjs.com/)      | Node.js web application framework      |
+| [Webpack](https://webpack.js.org/) | webpack is a static module bundler for modern JavaScript applications      |
+| [Babel](https://babeljs.io/) | Use next generation JavaScript, today |
+| [SASS](https://sass-lang.com/) | Sass is the most mature, stable, and powerful professional grade CSS extension language in the world |
 
 ### Installing
 
