@@ -11,6 +11,14 @@ loading data via The Movie Database (TMDb) API.
 ### Tools
 Key tools used in this React project are:
 
+| Tool          | Description   |
+| :-------------: |-------------|
+| React      | A JavaScript library for building user interfaces |
+| Express      | Node.js web application framework      |
+| Webpack | webpack is a static module bundler for modern JavaScript applications      |
+| Babel | Use next generation JavaScript, today |
+
+
 ### Installing
 
 node.js is required to get npm.
