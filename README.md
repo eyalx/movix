@@ -1,5 +1,7 @@
 # Movix - TMDb Movie Search
 
+![2019-01-17_1031](https://user-images.githubusercontent.com/357599/51305478-ab43f780-1a43-11e9-8ac7-431bfd4e9ccc.png)
+
 A react js movies search app using TMDb API
 * https://www.themoviedb.org/
 
